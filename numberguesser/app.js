@@ -13,7 +13,7 @@ let min = 1,
     winningNum = getRandomNum(min, max), 
     guessesLeft = 3;
     
-    console.log("winningNum", winningNum)
+console.log("winningNum", winningNum)
 
 // UI Elements
 const game = document.querySelector('#game'),
@@ -26,6 +26,9 @@ const game = document.querySelector('#game'),
 // Assign UI min and max
 minNum.innerHTML = `<b>${min}</b>`
 maxNum.innerHTML = `<b>${max}</b>`
+
+guessNumber = document.querySelector('.guess-number')
+guessNumber.textContent = `Number of guesses: ${guessesLeft}`;
 
 // Play again event listener
 game.addEventListener('mousedown', function(e) {
@@ -46,8 +49,11 @@ guessBtn.addEventListener('click', function() {
   }else{  // Wrong number
     guessesLeft -= 1;
 
+    guessNumber.textContent = `Number of guesses: ${guessesLeft}`;
+
     // Game Over - Lost
     if(guessesLeft === 0){
+      guessNumber.textContent = `Number of guesses: ${guessesLeft}`;
       gameOver(false, `Game Over, you lost. The correct number was ${winningNum}`)
     }else {
       // Game continues - wrong answer
