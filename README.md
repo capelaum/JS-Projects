@@ -1,5 +1,10 @@
-## Task List
-Javascript Task List made with DOM manipulation
+# JavaScript Projects
 
-## Loan Calculator
-Javascript Loan Calculator made with DOM manipulation
+Made using mostly DOM Manipulation to pratice
+
+## 1. Task List
+
+## 2. Loan Calculator
+
+## 3. Number Guesser
+
