@@ -1,6 +1,6 @@
 # JavaScript Projects
 
-Made using mostly DOM Manipulation to pratice
+Made using mostly DOM Manipulation.
 
 ## 1. Task List
 
