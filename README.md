@@ -1,6 +1,8 @@
-# JavaScript Projects
+<h1 align="center">JavaScript Projects</h1>
 
-Made using mostly DOM Manipulation to pratice
+<p align="center">
+  Made using mostly DOM Manipulation.
+</p>
 
 ## 1. Task List
 
