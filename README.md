@@ -10,7 +10,7 @@ Lista de Tarefas Básica.
 
 ## 2. Loan Calculator
 
-Cálculadora de juros sobre empréstimos ou afins.
+Calculadora de juros sobre empréstimos ou afins.
 
 ## 3. Number Guesser
 
