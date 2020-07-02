@@ -1,7 +1,7 @@
 <h1 align="center">JavaScript Projects</h1>
 
 <p align="center">
-  Made using mostly DOM Manipulation.
+  Feitos para praticar Manipulação da Document Object Model (DOM) com Javascript
 </p>
 
 ## 1. Task List
