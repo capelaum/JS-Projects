@@ -20,4 +20,11 @@ Jogo de Adivinhar um número aleatório dentro um limite.
 
 Projeto Orientado a Objetos de uma listagem de livros.
 
-### PS: Todos Projetos feitos utilizando apenas aramazenamento local LocalStorage do Navegador.
+## 5. Validador de CPF
+
+Site com bootstrap que implementa um input validador de CPF
+
+## 6. Campo de Jogo
+
+Renderiza um campo dinâmico no navegador com Player, NPC e 'arrobas' kk 
+
