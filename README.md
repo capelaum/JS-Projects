@@ -1,8 +1,6 @@
-<h1 align="center">JavaScript Projects</h1>
+<h1 align="center"> :yellow_heart:Projetos JavaScript</h1>
 
-<p align="center">
-  Feitos para praticar Manipulação da Document Object Model (DOM) com Javascript
-</p>
+<p align="center">Coleção de pequenos projetos feitos para praticar o queridinho Javascript</p>
 
 ## 1. Task List
 
