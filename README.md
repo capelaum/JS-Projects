@@ -24,5 +24,8 @@ Site com bootstrap que implementa um input validador de CPF
 
 ## 6. Campo de Jogo
 
-Renderiza um campo dinâmico no navegador com Player, NPC e 'arrobas' kk 
+Renderiza um campo dinâmico no navegador com Player, NPC e obstáculos 
+
+## 7. Hash Game - Jogo da Velha
+
 
