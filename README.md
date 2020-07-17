@@ -2,6 +2,10 @@
 
 <p align="center">Coleção de pequenos projetos feitos para praticar o queridinho Javascript</p>
 
+## 0. Github Finder
+
+Application consuming the Github API to show Users and latest Repos
+
 ## 1. Task List
 
 Lista de Tarefas Básica.
