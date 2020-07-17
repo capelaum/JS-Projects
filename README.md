@@ -8,6 +8,12 @@ Aplicação que consome a API do Github para mostrar Usuários pesquisados e seu
 <br>
 Application consuming the Github API to show searched Users and latest Repos.
 
+<div align="center">
+  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Github_Finder/github-finder-screenshot.png">
+</div>
+
+
+
 ## 2. Wheather
 Aplicação que consome [API da Open Wheater Map](https://openweathermap.org/api) para buscar informações sobre o clima de uma localidade
 <br>
