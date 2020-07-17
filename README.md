@@ -3,8 +3,10 @@
 <p align="center">Coleção de pequenos projetos feitos para praticar o queridinho JavasScript (puro)</p>
 
 ## 0. Github Finder
-Aplicação que consome a API do Github para mostrar Usuários pesquisados e seus últimos repositórios
-Application consuming the Github API to show searched Users and latest Repos
+
+Aplicação que consome a API do Github para mostrar Usuários pesquisados e seus últimos repositórios.
+<br>
+Application consuming the Github API to show searched Users and latest Repos.
 
 ## 1. Task List
 
