@@ -1,6 +1,6 @@
 <h1 align="center"> :yellow_heart:Projetos JavaScript</h1>
 
-<p align="center">Coleção de pequenos projetos feitos para praticar o queridinho Javascript</p>
+<p align="center">Coleção de pequenos projetos feitos para praticar o queridinho JavasScript (puro)</p>
 
 ## 0. Github Finder
 
