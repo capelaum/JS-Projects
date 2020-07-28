@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if(squares[i].classList.contains('checked') && squares[i].classList.contains('valid')){
         checks++;
-        console.log('checks = ', checks)
+        //console.log('checks = ', checks)
 
         if(checks === 80) {
           console.log('YOU WIN!');
