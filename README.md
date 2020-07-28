@@ -13,7 +13,6 @@ Application consuming the Github API to show searched Users and latest Repos.
 </div>
 
 
-
 ## 2. Wheather
 Aplicação que consome [API da Open Wheater Map](https://openweathermap.org/api) para buscar informações sobre o clima de uma localidade
 <br>
@@ -23,30 +22,40 @@ Application consuming the [Open Wheater Map API](https://openweathermap.org/api)
   <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Weather-JS/weatherjs/wheather-js-screenshot.png">
 </div>
 
-## 2. Task List
-
-Lista de Tarefas Básica usando manipulação da DOM.
-
-## 3. Loan Calculator
-
-Calculadora de juros sobre empréstimos ou afins.
-
-## 4. Number Guesser
-
-Jogo de Adivinhar um número aleatório dentro um limite.
+## 3. MineSweeper(Campo Minado)
+<div align="center">
+  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/MineSweeper/minesweeper.png">
+</div>
 
 ## 5. Book List
 
 Projeto Orientado a Objetos de uma listagem de livros.
+Simple Object Oriented project that list books
 
 ## 6. Validador de CPF
 
-Site com bootstrap que implementa um input validador de CPF
+Implementa um input validador de CPF
+Implements a Brazilian CPF Input Validator
 
 ## 7. Campo de Jogo
 
-Renderiza um campo dinâmico no navegador com Player, NPC e obstáculos 
+Renderiza um campo dinâmico com Player, NPC e obstáculos
+Renders a dinamic game field containing player, npc & obstacles
 
 ## 8. Hash Game - Jogo da Velha
+
+# DOM Projects
+
+## 1. Task List
+
+Lista de Tarefas Básica usando manipulação da DOM.
+
+## 2. Loan Calculator
+
+Calculadora de juros sobre empréstimos ou afins.
+
+## 3. Number Guesser
+
+Jogo de Adivinhar um número aleatório dentro um limite.
 
 
