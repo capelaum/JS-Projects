@@ -19,12 +19,12 @@ Aplicação que consome [API da Open Wheater Map](https://openweathermap.org/api
 Application consuming the [Open Wheater Map API](https://openweathermap.org/api) to show climate information about a location.
 
 <div align="center">
-  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Weather-JS/weatherjs/wheather-js-screenshot.png">
+  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Weather/weatherjs/wheather-js-screenshot.png">
 </div>
 
 ## 3. MineSweeper(Campo Minado)
 <div align="center">
-  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/MineSweeper/minesweeper.png">
+  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Mine_Sweeper/minesweeper.png">
 </div>
 
 ## 5. Book List
