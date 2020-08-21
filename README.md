@@ -14,9 +14,9 @@
 
   <h2>2. Wheather</h2>
   <p>
-    Aplicação que consome [API da Open Wheater Map](https://openweathermap.org/api) para buscar informações sobre o clima de uma localidade
+  Aplicação que consome <a href="https://openweathermap.org/api" target="_blank" >API da Open Wheater Map</a> para buscar informações sobre o clima de uma localidade
     <br>
-    Application consuming the [Open Wheater Map API](https://openweathermap.org/api) to show climate information about a location.
+    Application consuming the <a href="https://openweathermap.org/api" target="_blank" >API da Open Wheater Map</a> to show climate information about a location.
   </p>
   
   <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Weather/weatherjs/wheather-js-screenshot.png" width="300">
