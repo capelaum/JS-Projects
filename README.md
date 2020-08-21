@@ -1,4 +1,4 @@
-<h1 align="center"> :yellow_heart:Projetos JavaScript</h1>
+<h1 align="center">Projetos JavaScript :yellow_heart:</h1>
 
 <p align="center">Coleção de pequenos projetos feitos para praticar o queridinho JavasScript (puro)</p>
 
@@ -9,7 +9,7 @@ Aplicação que consome a API do Github para mostrar Usuários pesquisados e seu
 Application consuming the Github API to show searched Users and latest Repos.
 
 <div align="center">
-  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Github_Finder/github-finder-screenshot.png">
+  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Github_Finder/github-finder-screenshot.png" width="300">
 </div>
 
 
@@ -19,12 +19,12 @@ Aplicação que consome [API da Open Wheater Map](https://openweathermap.org/api
 Application consuming the [Open Wheater Map API](https://openweathermap.org/api) to show climate information about a location.
 
 <div align="center">
-  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Weather/weatherjs/wheather-js-screenshot.png">
+  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Weather/weatherjs/wheather-js-screenshot.png" width="300">
 </div>
 
 ## 3. MineSweeper(Campo Minado)
 <div align="center">
-  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Mine_Sweeper/minesweeper.png">
+  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Mine_Sweeper/minesweeper.png" width="300">
 </div>
 
 ## 5. Book List
