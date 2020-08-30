@@ -33,13 +33,13 @@
   
   <h2>5. Validador de CPF</h2>
   <p>
-    Implementa um input validador de CPF
+    Implementa um input validador de CPF <br>
     Implements a Brazilian CPF Input Validator
   </p>
   
   <h2>7. Campo de Jogo</h2>
   <p>
-    Renderiza um campo dinâmico com Player, NPC e obstáculos
+    Renderiza um campo dinâmico com Player, NPC e obstáculos <br>
     Renders a dinamic game field containing player, npc & obstacles
   </p>
 
