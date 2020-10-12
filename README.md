@@ -27,7 +27,7 @@
 
   <h2 align="center">4. Memory Game (Jogo da memória)</h2>
   
-  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Memory Game/MemoryGame.png" width="300">
+  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Memory_Game/MemoryGame.png" width="300">
   
   <h2>4. Book List</h2>
   <p>
