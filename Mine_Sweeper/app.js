@@ -237,6 +237,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const winMsg = function () {
+    console.log("YOU WIN!");
+    result.innerHTML = "YOU WIN!";
+  };
+
   // Check Win
   function checkForWin(square) {
     let matches = 0;
@@ -251,8 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //console.log('checks = ', checks)
 
         if (checks === 80) {
-          console.log("YOU WIN!");
-          result.innerHTML = "YOU WIN!";
+          winMsg();
           square.innerHTML = "😎";
           isGameOver = true;
         }
@@ -266,8 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (matches === bombAmount) {
-        console.log("YOU WIN!");
-        result.innerHTML = "YOU WIN!";
+        winMsg();
         square.innerHTML = "😎";
         isGameOver = true;
       }

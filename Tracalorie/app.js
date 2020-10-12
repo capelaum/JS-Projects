@@ -1,4 +1,64 @@
 // Storage Controller
+const StorageController = (function () {
+  // Public methods
+  return {
+    storeItem: function (item) {
+      let items;
+
+      // Check if any items in localStorage
+      if (localStorage.getItem("items") === null) {
+        items = [];
+        // Push new item
+        items.push(item);
+        // Set localStorage
+        localStorage.setItem("items", JSON.stringify(items));
+      } else {
+        // Get what is already in localStorage
+        items = JSON.parse(localStorage.getItem("items"));
+
+        // Push new item
+        items.push(item);
+        // Reset localStorage
+        localStorage.setItem("items", JSON.stringify(items));
+      }
+    },
+    getLocalStorageItems: function () {
+      let items;
+
+      if (localStorage.getItem("items") === null) {
+        items = [];
+      } else {
+        items = JSON.parse(localStorage.getItem("items"));
+      }
+      return items;
+    },
+    updateItemStorage: function (updatedItem) {
+      let items = JSON.parse(localStorage.getItem("items"));
+
+      items.forEach(function (item, index) {
+        if (updatedItem.id === item.id) {
+          items.splice(index, 1, updatedItem);
+        }
+      });
+      // Reset localStorage
+      localStorage.setItem("items", JSON.stringify(items));
+    },
+    deleteItemFromStorage: function (id) {
+      let items = JSON.parse(localStorage.getItem("items"));
+
+      items.forEach(function (item, index) {
+        if (id === item.id) {
+          items.splice(index, 1);
+        }
+      });
+      // Reset localStorage
+      localStorage.setItem("items", JSON.stringify(items));
+    },
+    clearItemsFromStorage: function () {
+      localStorage.removeItem("items");
+    },
+  };
+})();
 
 // Item Controller
 const ItemController = (function () {
@@ -11,11 +71,12 @@ const ItemController = (function () {
 
   // Data structure / State
   const data = {
-    items: [
-      // { id: 0, name: "Burguer King", calories: 1000 },
-      // { id: 1, name: "Taco Bell", calories: 700 },
-      // { id: 2, name: "Eggs", calories: 250 },
-    ],
+    // items: [
+    // { id: 0, name: "Burguer King", calories: 1000 },
+    // { id: 1, name: "Taco Bell", calories: 700 },
+    // { id: 2, name: "Eggs", calories: 250 },
+    // ],
+    items: StorageController.getLocalStorageItems(),
     currentItem: null,
     totalCalories: 0,
   };
@@ -244,7 +305,7 @@ const UIController = (function () {
 })();
 
 //* App Controller
-const App = (function (ItemController, UIController) {
+const App = (function (ItemController, StorageController, UIController) {
   // Load event listeners
   const loadEventListeners = function () {
     const UISelectors = UIController.getSelectors();
@@ -306,6 +367,9 @@ const App = (function (ItemController, UIController) {
       // Show total calories in UI
       UIController.showTotalCalories(totalCalories);
 
+      // Store in LocalStorage
+      StorageController.storeItem(newItem);
+
       // Clear Inputs
       UIController.clearInput();
     }
@@ -350,6 +414,9 @@ const App = (function (ItemController, UIController) {
     // Show total calories in UI
     UIController.showTotalCalories(totalCalories);
 
+    // Update Local Storage
+    StorageController.updateItemStorage(updatedItem);
+
     UIController.clearEditState();
 
     e.preventDefault();
@@ -371,6 +438,9 @@ const App = (function (ItemController, UIController) {
     // Show total calories in UI
     UIController.showTotalCalories(totalCalories);
 
+    // Update Local Storage
+    StorageController.deleteItemFromStorage(currentItem.id);
+
     UIController.clearEditState();
 
     e.preventDefault();
@@ -388,6 +458,9 @@ const App = (function (ItemController, UIController) {
 
     // Remove all from UI
     UIController.clearItems();
+
+    // Clear from localStorage
+    StorageController.clearItemsFromStorage();
 
     UIController.clearEditState();
 
@@ -424,7 +497,7 @@ const App = (function (ItemController, UIController) {
       loadEventListeners();
     },
   };
-})(ItemController, UIController);
+})(ItemController, StorageController, UIController);
 
 // Initialize Append
 App.init();

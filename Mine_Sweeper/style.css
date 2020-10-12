@@ -1,4 +1,4 @@
-body{
+body {
   background-color: #333;
 }
 
@@ -25,8 +25,7 @@ div {
   font-size: 25px;
   text-align: center;
   color: #fff;
-  font-family: 'Roboto Mono', monospace;
-
+  font-family: "Roboto Mono", monospace;
 }
 .valid {
   height: 40px;
@@ -51,7 +50,7 @@ div {
   border: 5px solid;
   border-color: #f5f3eb #bab7a9 #bab7a9 #fff9db;
   box-sizing: border-box;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .one {
@@ -66,7 +65,7 @@ div {
   color: #57da59;
 }
 
-.four{
+.four {
   color: #bb41d3;
 }
 
