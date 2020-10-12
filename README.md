@@ -21,9 +21,12 @@
   
   <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Weather/weatherjs/wheather-js-screenshot.png" width="300">
 
-  <h2 align="center">3. MineSweeper (Campo Minado)</h2>
+  <h2 align="center"><a href="https://capelaum-minesweeper.netlify.app/" target="_blank">3. MineSweeper (Campo Minado)</a></h2>
   
   <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Mine_Sweeper/minesweeper.png" width="300">
+  
+[![Netlify Status](https://api.netlify.com/api/v1/badges/35c8dd44-4f97-42b7-8f18-0b793c93554a/deploy-status)](https://app.netlify.com/sites/capelaum-minesweeper/deploys)
+
 
   <h2 align="center">4. Memory Game (Jogo da memória)</h2>
   
