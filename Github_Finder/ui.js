@@ -5,7 +5,6 @@ class UI {
   }
 
   showProfile(user) {
-    
     // show user Profile
     this.profile.innerHTML = `
       <div class="card card-body mb-3">
@@ -39,9 +38,7 @@ class UI {
 
   // Show user repos 
   showRepos(repos) {
-
     let output = '';
-
     repos.forEach(function(repo) {
       output += `
         <div class="card card-body mb-2">
@@ -61,7 +58,6 @@ class UI {
 
     // Output repos
     document.getElementById('repos').innerHTML = output;
-
   }
 
   // If user searched is not found 
@@ -89,14 +85,11 @@ class UI {
     setTimeout(() => {
       this.clearAlert();
     }, 3000)
-
   }
 
   // Clear alert message
   clearAlert() {
-
     const currentAlert = document.querySelector('.alert');
-
     if(currentAlert) {
       currentAlert.remove();
     }
