@@ -2,65 +2,21 @@
   <h1>Projetos JavaScript :yellow_heart:</h1>
 
   <p>Coleção de pequenos projetos feitos para praticar o queridinho JavasScript (puro)</p>
-
-  <h2>1. Github Finder</h2>
-  <p>
-    Aplicação que consome a API do Github para mostrar Usuários pesquisados e seus últimos repositórios.
-    <br>
-    Application consuming the Github API to show searched Users and latest Repos.
-  </p>
   
-  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Github_Finder/github-finder-screenshot.png" width="300">
-
-  <h2>2. Wheather</h2>
-  <p>
-  Aplicação que consome <a href="https://openweathermap.org/api" target="_blank" >API da Open Wheater Map</a> para buscar informações sobre o clima de uma localidade
-    <br>
-    Application consuming the <a href="https://openweathermap.org/api" target="_blank" >API da Open Wheater Map</a> to show climate information about a location.
-  </p>
-  
-  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Weather/weatherjs/wheather-js-screenshot.png" width="300">
-
-  <h2 align="center"><a href="https://capelaum-minesweeper.netlify.app/" target="_blank">3. MineSweeper (Campo Minado)</a></h2>
-  
-  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Mine_Sweeper/minesweeper.png" width="300">
-  
-[![Netlify Status](https://api.netlify.com/api/v1/badges/35c8dd44-4f97-42b7-8f18-0b793c93554a/deploy-status)](https://app.netlify.com/sites/capelaum-minesweeper/deploys)
-
-
-  <h2 align="center">4. Memory Game (Jogo da memória)</h2>
-  
-  <img src="https://github.com/capelaum/JS-Mini-Projects/blob/master/Memory_Game/MemoryGame.png" width="300">
-  
-  <h2>4. Book List</h2>
-  <p>
-    Projeto Orientado a Objetos de uma listagem de livros.
-    Simple Object Oriented project that list books
-  </p>
-  
-  <h2>5. Validador de CPF</h2>
-  <p>
-    Implementa um input validador de CPF <br>
-    Implements a Brazilian CPF Input Validator
-  </p>
-  
-  <h2>7. Campo de Jogo</h2>
-  <p>
-    Renderiza um campo dinâmico com Player, NPC e obstáculos <br>
-    Renders a dinamic game field containing player, npc & obstacles
-  </p>
-
-  <h2>8. Hash Game - Jogo da Velha</h2>
-
-# DOM Projects
-
-  <h2>1. Task List</h2>
-  <p>Lista de Tarefas Básica usando manipulação da DOM.</p>
-
-  <h2>2. Loan Calculator</h2>
-  <p>Calculadora de juros sobre empréstimos ou afins.</p>
-
-  <h2>3. Number Guesser</h2>
-  <p>Jogo de Adivinhar um número aleatório dentro um limite.</p>
-
+  <div align="left">
+    <ul>
+      <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Tracalorie" target="_blank">Tracalorie</a></li>
+      <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Github_Finder" target="_blank">Github Finder</a></li>
+      <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Mine_Sweeper" target="_blank">Mine Sweeper</a></li>
+      <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Memory_Game" target="_blank">Memory Game</a></li>
+      <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Booklist" target="_blank">Booklist</a></li>
+      <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Tasklist" target="_blank">Tasklist</a></li>
+      <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Validador_CPF" target="_blank">Gerador e Validador de CPF</a></li>
+      <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Weather" target="_blank">Weather</a></li>
+      <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Numberguesser" target="_blank">Number Guesser</a></li>
+      <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Loancalculator" target="_blank">Loan Calculator</a></li>
+      <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Hash_Game" target="_blank">Hash Game</a></li>
+      <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Gamefield" target="_blank">Game Field</a></li>
+    </ul>
+  </div>  
 </div>

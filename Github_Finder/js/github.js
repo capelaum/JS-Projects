@@ -1,5 +1,4 @@
 class Github {
-
   constructor() {
     this.clientID = 'ce0cfa50e8ae6b2ce93c';
     this.clientSecret = '630f789d5a7094770b271315bedf75f7cd6aad84';
@@ -15,7 +14,5 @@ class Github {
     const repos = await reposResponse.json();
 
     return { profile, repos }
-
   }
-
 }

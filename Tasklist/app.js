@@ -145,9 +145,7 @@ function removeTaskFromLocalStorage(taskItem) {
 
 // Clear Tasks
 function clearTasks() {
-  // taskList.innerHTML = ''
 
-  // Faster - https://jsperf.com/innerhtml-vs-removechild/47
   while(taskList.firstChild) {
     taskList.removeChild(taskList.firstChild);
   }

@@ -5,9 +5,9 @@ class Storage {
     this.state;
     this.country
 
-    this.defaultCity = 'Miami';
-    this.defaultState = 'FL';
-    this.defaultCountry = 'us';
+    this.defaultCity = 'São Paulo';
+    this.defaultState = 'SP';
+    this.defaultCountry = 'br';
   }
 
   getLocationData() {
