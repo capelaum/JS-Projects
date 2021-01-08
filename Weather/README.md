@@ -7,6 +7,6 @@
 Link: <a href="https://capelaum-weather.netlify.app" target="_blank">Wheater app</a>
 
 <div align="center">
-  <img src="./wheather-js-screenshot.png" width="300">
+  <img src="./wheather-js-screenshot.png" width="700">
 </div>
 

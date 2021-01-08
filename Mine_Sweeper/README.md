@@ -7,5 +7,5 @@
 Link: <a href="https://capelaum-mine-sweeper.netlify.app" target="_blank">MineSweeper (Campo Minado)</a>
 
 <div align="center">
-  <img src="./minesweeper.png" width="300">
+  <img src="./minesweeper.png" width="700">
 </div>

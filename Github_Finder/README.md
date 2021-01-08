@@ -7,5 +7,5 @@
 Link: <a href="https://capelaum-github-finder.netlify.app/" target="_blank">Github Finder</a>
 
 <div align="center">
-  <img src="./github-finder-screenshot.png" width="300">
+  <img src="./github-finder-screenshot.png" width="700">
 </div>

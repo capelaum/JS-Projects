@@ -7,5 +7,5 @@
 Link: <a href="https://capelaum-tracalorie.netlify.app" target="_blank">Tracalorie (Registro de calorias)</a>
 
 <div align="center">
-  <img src="./tracalorie.png" width="300">
+  <img src="./tracalorie.png" width="700">
 </div>

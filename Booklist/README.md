@@ -7,5 +7,5 @@
 Link: <a href="https://capelaum-booklist.netlify.app" target="_blank">Book List (Lista de Livros)</a>
 
 <div align="center">
-  <img src="./booklist.png" width="300">
+  <img src="./booklist.png" width="700">
 </div>

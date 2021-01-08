@@ -7,5 +7,5 @@
 Link: <a href="https://capelaum-tasklist.netlify.app" target="_blank">Task List (Lista de tarefas)</a>
 
 <div align="center">
-  <img src="./tasklist.png" width="300">
+  <img src="./tasklist.png" width="700">
 </div>

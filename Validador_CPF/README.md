@@ -7,5 +7,5 @@
 Link: <a href="https://capelaum-validador-cpf.netlify.app" target="_blank">Gerador e Validador de CPF</a>
 
 <div align="center">
-  <img src="./validadorCPF.png" width="500">
+  <img src="./validadorCPF.png" width="700">
 </div>
