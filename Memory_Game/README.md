@@ -1,7 +1,7 @@
 ## Memory Game (Jogo da memória)
-- pt-br
+- (pt-br)
   Aplicação do famoso Jogo da Memória.
-- en-us
+- (en-us)
   Famous Memory Game app.
 
 Link: <a href="https://capelaum-memory-game.netlify.app" target="_blank">Memory Game (Jogo da memória)</a>

@@ -1,7 +1,7 @@
 ## Loan Calculator (Calculadora de Empréstimo)
-- pt-br
+- (pt-br)
   Aplicação de Calculadora de Empréstimo.
-- en-us
+- (en-us)
   Loan Calculator Application.
 
 Link: <a href="https://capelaum-loan-calculator.netlify.app" target="_blank">Loan Calculator (Calculadora de Empréstimo)</a>

@@ -1,7 +1,7 @@
 ## Task List (Lista de tarefas)
-- pt-br
+- (pt-br)
   Aplicação de Lista de Tarefas simples.
-- en-us
+- (en-us)
   Simple Tasks List application.
 
 Link: <a href="https://capelaum-tasklist.netlify.app" target="_blank">Task List (Lista de tarefas)</a>
