@@ -2,7 +2,10 @@
 
 :root {
   --dark-blue: #363F5F;
+  --green: #49AA26;
+  --light-green: #3DD705;
   --dark-green: #2D4A22;
+  --red: #E92929;
 
 }
 
@@ -12,9 +15,27 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 93.75%; /* 15px */
+}
+
 body {
   background-color: #f0f2f5;
   font-family: "Poppins", sans-serif;
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  /* display: none; */
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .container {
@@ -28,6 +49,60 @@ h2 {
   margin-bottom: 0.8rem;
   color: var(--dark-blue);
   font-weight: 400;
+}
+
+/* LINKS & BUTTONS */
+a {
+  color: var(--green);
+  text-decoration: none;
+
+}
+
+a:hover{
+  color: var(--light-green);
+}
+
+.button.new {
+  display: inline-block;
+  margin-bottom: .8rem;
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  
+  border: none;
+  border-radius: 0.25rem;
+
+  color: #FFF;
+  background: var(--green);
+
+  padding: 0;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--light-green);
+}
+
+.button.cancel {
+  width: 100%;
+  height: 50px;
+
+  color: var(--red);
+  border: 2px solid  var(--red);
+  border-radius: 0.25rem;
+  padding: 1rem 3rem;
+
+  opacity: 0.6;
+
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.button.cancel:hover {
+  opacity: 1;
 }
 
 /* HEADER */
@@ -66,6 +141,10 @@ header {
 .card h3{
   font-weight: 400;
   font-size: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card p{
@@ -75,15 +154,21 @@ header {
 }
 
 .card.total{
-  background: #49AA26;
+  background: var(--green);
   color: #FFF;
 }
 
 /* TABLE */
+
+#transaction {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
 #data-table {
   width: 100%;
   color: #687192;
-
   border-spacing: 0 0.5rem;
 }
 
@@ -92,8 +177,13 @@ header {
   border-radius: 0.25rem 0 0 0.25rem;
 }
 
+#data-table thead tr th:last-child,
+#data-table tbody tr td:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
 table tbody tr {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 table tbody tr:hover{
@@ -122,12 +212,78 @@ td.income {
 }
 
 td.expense {
-  color: #E92929;
+  color: var(--red);
 }
 
 td.date {
   color: black;
 }
+
+/* MODAL */
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  z-index: 3;
+}
+
+.modal-overlay.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background-color: #F0F2F5;
+  padding: 2.4rem;
+  position: relative;
+}
+
+/* MODAL FORM */
+#form {
+  max-width: 500px;
+
+}
+
+#form h2 {
+  margin-top: 0;
+}
+
+.input-group {
+  margin-top: 0.8rem;
+}
+
+.input-group input {
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.input-group small {
+  opacity: 0.4;
+}
+
+.input-group.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+  width: 48%;
+}
+
 
 /* Footer */
 footer {
@@ -136,3 +292,17 @@ footer {
   color: var(--dark-blue);
   opacity: 0.7;
 }
+
+/* RESPONSIVO */
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 87.5%; /* 14px */
+  }
+
+  #balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
