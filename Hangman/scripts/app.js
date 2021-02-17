@@ -41,22 +41,12 @@ document.querySelector('#reset').addEventListener('click', startGame);
 
 startGame();
 
-/* API CALLS */
-const wordCount = "2";
+/* Country API CALL */
 
-/* getPuzzle(wordCount)
-  .then((puzzle) => {
-    console.log(puzzle);
-  })
-  .catch((err) => {
-    console.log(`Error: ${err}`);
-  }); */
-
-/* getCurrentCountry()
+getCurrentCountry()
   .then((country) => {
     console.log(country.name);
   })
   .catch((err) => {
     console.log(`Error: ${err}`);
   });
- */
