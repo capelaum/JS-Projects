@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap");
 
 :root {
+  --purple: #583FC2;
   --dark-blue: #363F5F;
   --green: #49AA26;
   --light-green: #3DD705;
-  --dark-green: #2D4A22;
   --red: #E92929;
-
+  --light-color: #F0F2F5;
+  --dark-color: #1e1e1e;
 }
 
 * {
@@ -20,14 +21,13 @@ html {
 }
 
 body {
-  background-color: #f0f2f5;
+  background-color: #1e1e1e;
   font-family: "Poppins", sans-serif;
 }
 
 /* Screen reader only */
 .sr-only {
   position: absolute;
-  /* display: none; */
   width: 1px;
   height: 1px;
   padding: 0;
@@ -105,9 +105,13 @@ button:hover {
   opacity: 1;
 }
 
+.remove-icon {
+  cursor: pointer;
+}
+
 /* HEADER */
 header {
-  background: var(--dark-green);
+  background: var(--purple);
   color: #FFF;
   padding: 2rem 0 10rem;
   text-align: center;
@@ -207,11 +211,11 @@ td.description {
   color: var(--dark-blue);
 }
 
-td.income {
+.income {
   color: #12A454;
 }
 
-td.expense {
+.expense {
   color: var(--red);
 }
 
@@ -231,10 +235,11 @@ td.date {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  
   opacity: 0;
   visibility: hidden;
   z-index: 3;
+  transition: 0.3s;
 }
 
 .modal-overlay.active{
@@ -251,7 +256,6 @@ td.date {
 /* MODAL FORM */
 #form {
   max-width: 500px;
-
 }
 
 #form h2 {
@@ -289,7 +293,7 @@ td.date {
 footer {
   text-align: center;
   padding: 4rem 0 2rem;
-  color: var(--dark-blue);
+  color: var(--light-color);
   opacity: 0.7;
 }
 
