@@ -6,6 +6,7 @@
   <div align="left">
     <ul>
       <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Booklist" target="_blank">Booklist</a></li>
+      <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Dev_Finance" target="_blank">Dev Finance$</a></li>
       <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Gamefield" target="_blank">Game Field</a></li>
       <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Github_Finder" target="_blank">Github Finder</a></li>
       <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Hangman" target="_blank">Hangman</a></li>
