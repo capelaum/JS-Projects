@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>To-do App</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="header__title">Todos App</h1>
+      <h2 class="header__subtitle">What do you need to do?</h2>
+    </div>
+  </header>
+
+  <div class="actions">
+    <div class="actions__container">
+      <input class="input" id="filter-todos" type="text" placeholder="Filter todos">
+      <label class="checkbox">
+        <input type="checkbox" name="hideCompleted" id="id-hideCompleted"> Hide Completed
+      </label>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="todos"></div>
+    <form action="" id="form">
+      <input class="input" type="text" placeholder="Enter something todo" name="text">
+      <button class="button" type="submit">Add Todo</button>
+    </form>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuidv4.min.js"></script>
+  <script src="scripts/todo-functions.js"></script>
+  <script src="scripts/todo-app.js"></script>
+</body>
+</html>
