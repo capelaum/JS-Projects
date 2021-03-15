@@ -109,8 +109,7 @@ const Utils = {
 
   fomartCurrency(value) {
     const signal = Number(value) < 0 ? "-" : "";
-    // troca o que nao for digito por nada
-    value = String(value).replace(/\D/g, "");
+    value = String(value).replace(/\D/g, ""); // tira o '-'
     value = Number(value) / 100;
     value = value.toLocaleString("pt-br", {
       style: "currency",

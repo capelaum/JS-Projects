@@ -45,7 +45,6 @@ body {
 
 /* TITLES */
 h2 {
-  margin-top: 3.2rem;
   margin-bottom: 0.8rem;
   color: var(--dark-blue);
   font-weight: 400;
@@ -287,7 +286,6 @@ td.date {
 .input-group.actions button {
   width: 48%;
 }
-
 
 /* Footer */
 footer {
