@@ -1,6 +1,9 @@
 import { EasyHTTP as http } from "./easyHttp";
 import { UserInterface as ui } from "./userInterface";
 
+const localhost = "http://localhost:3000";
+const baseUrl = "https://capelacast-server.herokuapp.com"
+
 // Get posts on DOM load
 document.addEventListener("DOMContentLoaded", getPosts);
 
@@ -12,7 +15,7 @@ ui.cardForm.addEventListener("click", cancelEdit);
 
 function getPosts() {
   http
-    .get("http://localhost:3000/posts")
+    .get(`${baseUrl}/posts`)
     .then(data => ui.showPosts(data))
     .catch(err => console.log(err));
 }
@@ -35,7 +38,7 @@ function submitPost() {
   if (id === "") {
     // Create Post
     http
-      .post("http://localhost:3000/posts", postData)
+      .post(`${baseUrl}/posts`, postData)
       .then(() => {
         ui.clearFields();
         ui.showAlert("Post added", "alert alert-success");
@@ -47,7 +50,7 @@ function submitPost() {
   if (id !== "") {
     // Update Post
     http
-      .put(`http://localhost:3000/posts/${id}`, postData)
+      .put(`${baseUrl}/posts/${id}`, postData)
       .then(() => {
         ui.showAlert("Post updated", "alert alert-success");
         ui.changeFormState('add');
@@ -66,7 +69,7 @@ function deletePost(e) {
 
     if (confirm(`Are you sure you want to delete post ${id}?`)) {
       http
-        .delete(`http://localhost:3000/posts/${id}`)
+        .delete(`${baseUrl}/posts/${id}`)
         .then(data => {
           ui.showAlert("Post removed", "alert alert-success");
           getPosts();
