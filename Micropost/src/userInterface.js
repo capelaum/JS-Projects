@@ -1,6 +1,9 @@
 export const UserInterface = {
   container: document.querySelector(".postsContainer"),
   postsArea: document.querySelector("#postsArea"),
+  cardForm: document.querySelector(".card-form"),
+  formEnd: document.querySelector(".form-end"),
+
   titleInput: document.querySelector("#title"),
   bodyInput: document.querySelector("#body"),
   hiddenInput: document.querySelector("#hidden"),
@@ -34,6 +37,40 @@ export const UserInterface = {
     UserInterface.titleInput.value = post.title;
     UserInterface.bodyInput.value = post.body;
     UserInterface.hiddenInput.value = post.id;
+
+    UserInterface.changeFormState("edit");
+  },
+
+  changeFormState(type) {
+    
+    if (type === "edit") {
+      UserInterface.postSubmitBtn.textContent = "Update Post";
+      UserInterface.postSubmitBtn.className =
+        "post-submit btn btn-warning btn-block";
+
+      // Create cancel edit state button
+      const cancelButton = document.createElement("button");
+      cancelButton.className = "post-cancel btn btn-danger btn-block mt-2";
+      cancelButton.appendChild(document.createTextNode("Cancel Edit"));
+
+      // Insert Before form end
+      UserInterface.cardForm.insertBefore(cancelButton, UserInterface.formEnd);
+    }
+
+    if (type !== "edit") {
+      UserInterface.postSubmitBtn.textContent = "Post it";
+      UserInterface.postSubmitBtn.className =
+        "post-submit btn btn-primary btn-block";
+
+      // remove Cancel Button if it's there
+      if(document.querySelector('.post-cancel')) {
+        document.querySelector('.post-cancel').remove();
+      }
+
+      // reset
+      UserInterface.hiddenInput.value = "";
+      UserInterface.clearFields();
+    }
   },
 
   showAlert(message, className) {
@@ -54,7 +91,7 @@ export const UserInterface = {
   clearAlert() {
     const currentAlert = document.querySelector(".alert");
 
-    if(currentAlert) currentAlert.remove();
+    if (currentAlert) currentAlert.remove();
   },
 
   clearFields() {
