@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", getPosts);
 // Add Post Event
 ui.postSubmitBtn.addEventListener("click", submitPost);
 ui.postsArea.addEventListener("click", deletePost);
+ui.postsArea.addEventListener("click", enableEditPost);
 
 function getPosts() {
   http
@@ -37,9 +38,9 @@ function submitPost() {
 
 function deletePost(e) {
   e.preventDefault();
-  console.log(e.target);
+  const parent = e.target.parentElement;
 
-  if (e.target.parentElement.classList.contains("delete")) {
+  if (parent.classList.contains("delete")) {
     const id = e.target.parentElement.dataset.id;
 
     if (confirm(`Are you sure you want to delete post ${id}?`)) {
@@ -51,5 +52,28 @@ function deletePost(e) {
         })
         .catch(err => console.log(err));
     }
+  }
+}
+
+// Enable edit post state
+function enableEditPost(e) {
+  e.preventDefault();
+  const parent = e.target.parentElement;
+
+  if (parent.classList.contains("edit")) {
+    const id = parent.dataset.id;
+    const bodyElement = parent.previousElementSibling;
+
+    // Get Post Title and Body
+    const body = bodyElement.textContent;
+    const title = bodyElement.previousElementSibling.textContent;
+
+    const postData = {
+      id,
+      title,
+      body,
+    };
+
+    ui.fillForm(postData);
   }
 }

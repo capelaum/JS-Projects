@@ -30,6 +30,12 @@ export const UserInterface = {
     postsArea.innerHTML = output;
   },
 
+  fillForm(post) {
+    UserInterface.titleInput.value = post.title;
+    UserInterface.bodyInput.value = post.body;
+    UserInterface.hiddenInput.value = post.id;
+  },
+
   showAlert(message, className) {
     UserInterface.clearAlert();
 
