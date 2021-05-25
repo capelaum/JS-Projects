@@ -1,10 +1,9 @@
 # Micropost
 
-Simple application for creating and managing small posts using mainly Javascript
+CRUD Application for creating, deleting and updating small posts using mainly vanilla Javascript and Json-Server Fake API
+#### [Live Demo](https://capelaum-microposts.netlify.app)
 
-## Babel Webpack Starter
-
-A starter pack to build JavaScript applications using standards from ES2015, ES2016 & ES2017. It uses webpack, Babel and webpack-dev-server to compile and serve. It is fully compatible with Async/Await as it uses the Babel polyfill.
+<img src=".github/Capa.png" align="center" />
 
 ## Usage
 
@@ -15,6 +14,10 @@ Install the dependencies
 ```sh
 $ npm install
 ```
+
+### JSON-Server
+
+Run JSON-Server locallly: change the `app.js` file, replacing where is `baseUrl` to `localhost` in the API calls
 
 ### Serve
 To serve in the browser  - Runs webpack-dev-server
