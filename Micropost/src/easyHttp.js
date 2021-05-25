@@ -13,7 +13,7 @@ export const EasyHTTP = {
   get: async url => await fetch(url).then(response => response.json()),
 
   // Make an HTTP POST Request
-  async post(url, data) {
+  post: async (url, data) => {
     const responseData = await fetch(url, {
       method: "POST",
       headers: {
@@ -34,7 +34,7 @@ export const EasyHTTP = {
       },
       body: JSON.stringify(data),
     }).then(response => response.json());
-    
+
     return responseData;
   },
 

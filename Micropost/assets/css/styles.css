@@ -6,3 +6,7 @@ a {
   color: red;
 }
 
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+}

@@ -1,4 +1,5 @@
 export const UserInterface = {
+  container: document.querySelector(".postsContainer"),
   postsArea: document.querySelector("#postsArea"),
   titleInput: document.querySelector("#title"),
   bodyInput: document.querySelector("#body"),
@@ -27,5 +28,31 @@ export const UserInterface = {
     });
 
     postsArea.innerHTML = output;
+  },
+
+  showAlert(message, className) {
+    ui.clearAlert();
+
+    const div = document.createElement("div");
+    div.className = className;
+    div.appendChild(document.createTextNode(message));
+
+    // Insert in DOM
+    ui.container.insertBefore(div, postsArea);
+
+    setTimeout(() => {
+      ui.clearAlert();
+    }, 3000);
+  },
+
+  clearAlert() {
+    const currentAlert = document.querySelector(".alert");
+
+    if(currentAlert) currentAlert.remove();
+  },
+
+  clearFields() {
+    ui.titleInput.value = "";
+    ui.bodyInput.value = "";
   },
 };
