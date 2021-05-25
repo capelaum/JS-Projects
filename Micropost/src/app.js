@@ -1,4 +1,4 @@
-import { EasyHTTP as http } from "./http";
+import { EasyHTTP as http } from "./easyHttp";
 import { UserInterface as ui } from "./userInterface";
 
 // Get posts on DOM load
