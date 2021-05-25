@@ -31,17 +31,17 @@ export const UserInterface = {
   },
 
   showAlert(message, className) {
-    ui.clearAlert();
+    UserInterface.clearAlert();
 
     const div = document.createElement("div");
     div.className = className;
     div.appendChild(document.createTextNode(message));
 
     // Insert in DOM
-    ui.container.insertBefore(div, postsArea);
+    UserInterface.container.insertBefore(div, postsArea);
 
     setTimeout(() => {
-      ui.clearAlert();
+      UserInterface.clearAlert();
     }, 3000);
   },
 
@@ -52,7 +52,7 @@ export const UserInterface = {
   },
 
   clearFields() {
-    ui.titleInput.value = "";
-    ui.bodyInput.value = "";
+    UserInterface.titleInput.value = "";
+    UserInterface.bodyInput.value = "";
   },
 };

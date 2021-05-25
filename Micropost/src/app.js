@@ -28,31 +28,11 @@ function submitPost() {
   http
     .post("http://localhost:3000/posts", postData)
     .then(() => {
-      clearFields();
-      showAlert("Post added", "alert alert-success");
+      ui.clearFields();
+      ui.showAlert("Post added", "alert alert-success");
       getPosts();
     })
     .catch(err => console.log(err));
-}
-
-function showAlert(message, className) {
-  ui.clearAlert();
-
-  const div = document.createElement("div");
-  div.className = className;
-  div.appendChild(document.createTextNode(message));
-
-  // Insert in DOM
-  ui.container.insertBefore(div, postsArea);
-
-  setTimeout(() => {
-    ui.clearAlert();
-  }, 3000);
-}
-
-function clearFields() {
-  ui.titleInput.value = "";
-  ui.bodyInput.value = "";
 }
 
 function deletePost(e) {
@@ -66,7 +46,7 @@ function deletePost(e) {
       http
         .delete(`http://localhost:3000/posts/${id}`)
         .then(data => {
-          showAlert("Post removed", "alert alert-success");
+          ui.showAlert("Post removed", "alert alert-success");
           getPosts();
         })
         .catch(err => console.log(err));
