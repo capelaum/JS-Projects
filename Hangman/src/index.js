@@ -21,21 +21,23 @@ const render = game => {
     puzzleEl.appendChild(letterEl);
   });
 
-  if (game.status === "playing") statusEl.style.color = "white";
-  if (game.status === "finished") statusEl.style.color = "greenyellow";
-  if (game.status === "failed") statusEl.style.color = "red";
-
-  statusEl.textContent = getStatusMessage(game);
+  setStatusMessage(game);
 };
 
-const getStatusMessage = game => {
+const setStatusMessage = game => {
   switch (game.status) {
     case "playing":
-      return `Guesses left: ${game.guessesLeft}`;
+      statusEl.style.color = "white";
+      statusEl.textContent = `Guesses left: ${game.guessesLeft}`;
+      break;
     case "failed":
-      return `Nice try! The word was "${game.word.join("")}"`;
+      statusEl.style.color = "red";
+      statusEl.textContent = `Nice try! The word was "${game.word.join("")}"`;
+      break;
     case "finished":
-      return "Great work! You guessed the word correctly!";
+      statusEl.style.color = "greenyellow";
+      statusEl.textContent = "Great work! You guessed the word correctly!";
+      break;
   }
 };
 
