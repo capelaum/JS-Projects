@@ -1,6 +1,5 @@
 /* Hangman class */
 class Hangman {
-
   constructor(word, guessesLeft) {
     this.word = word.toLowerCase().split("");
     this.guessesLeft = guessesLeft;
@@ -11,7 +10,7 @@ class Hangman {
   get puzzle() {
     let puzzle = "";
 
-    this.word.forEach((letter) => {
+    this.word.forEach(letter => {
       if (this.guessedLetters.includes(letter) || letter === " ") {
         puzzle += letter;
       } else {
@@ -35,19 +34,8 @@ class Hangman {
     }
   }
 
-  get statusMessage() {
-    switch (this.status) {
-      case "playing":
-        return `Guesses left: ${game1.guessesLeft}`;
-      case "failed":
-        return `Nice try! The word was "${this.word.join("")}"`;
-      case "finished":
-        return "Great work! You guessed the word correctly!";
-    }
-  }
-
   makeGuess(guess) {
-    if (this.status !== "playing") return; // game over 
+    if (this.status !== "playing") return; // game over
 
     guess = guess.toLowerCase();
     const isUnique = !this.guessedLetters.includes(guess);
@@ -59,3 +47,5 @@ class Hangman {
     this.setStatus();
   }
 }
+
+export default Hangman;

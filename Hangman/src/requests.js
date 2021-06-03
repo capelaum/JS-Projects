@@ -1,4 +1,4 @@
-const getPuzzle = async (wordCount) => {
+export const getPuzzle = async wordCount => {
   const response = await fetch(
     `https://puzzle.mead.io/puzzle?wordCount=${wordCount}`
   );
@@ -11,16 +11,16 @@ const getPuzzle = async (wordCount) => {
   }
 };
 
-const getCurrentCountry = async () => {
+export const getCurrentCountry = async () => {
   const location = await getLocation();
   return getCountry(location.country);
-}
+};
 
-const getCountry = async (countryCode) => {
+const getCountry = async countryCode => {
   const response = await fetch("https://restcountries.eu/rest/v2/all");
   if (response.status === 200) {
     const data = await response.json();
-    return data.find((country) => country.alpha2Code === countryCode);
+    return data.find(country => country.alpha2Code === countryCode);
   } else {
     throw new Error("Unable to fetch the Country data");
   }
