@@ -9,5 +9,5 @@
 </div>
 
 <div align="center">
-  <img src="public/img/hangman-screenshot.png" width="700">
+  <img src="public/img/hangman.png" width="700">
 </div>
