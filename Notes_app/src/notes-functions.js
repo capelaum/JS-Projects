@@ -26,33 +26,6 @@ const renderNotes = (notes, filters) => {
   }
 };
 
-// Sort notes by one of the three options
-const sortNotes = (notes, sortBy) => {
-  if (sortBy === "byEdited") {
-    return notes.sort((a, b) => {
-      if (a.updatedAt > b.updatedAt) return -1;
-      if (a.updatedAt < b.updatedAt) return 1;
-      if (a.updatedAt === b.updatedAt) return 0;
-    });
-  }
-
-  if (sortBy === "byCreated") {
-    return notes.sort((a, b) => {
-      if (a.createdAt > b.createdAt) return -1;
-      if (a.createdAt < b.createdAt) return 1;
-      if (a.createdAt === b.createdAt) return 0;
-    });
-  }
-
-  if (sortBy === "alphabetical") {
-    return notes.sort((a, b) => {
-      if (a.title.toLowerCase() < b.title.toLowerCase()) return -1;
-      if (a.title.toLowerCase() > b.title.toLowerCase()) return 1;
-      if (a.title.toLowerCase() === b.title.toLowerCase()) return 0;
-    });
-  }
-};
-
 // Generate the DOM Structure for a note
 const generateNoteDOM = note => {
   const noteElement = document.createElement("a");
@@ -78,15 +51,6 @@ const generateNoteDOM = note => {
   noteElement.appendChild(statusElement);
 
   return noteElement;
-};
-
-const removeNote = id => {
-  if (confirm("Are You sure?")) {
-    const noteIndex = notes.findIndex(note => note.id === id);
-    if (noteIndex !== -1) notes.splice(noteIndex, 1);
-  }
-
-  console.log(notes);
 };
 
 // generate the last edited message
