@@ -1,5 +1,5 @@
 import { getFilters } from "./filters";
-import { sortNotes } from "./notes";
+import { sortNotes, getNotes } from "./notes";
 
 const renderNotes = () => {
   const notesList = document.querySelector("#notes");
@@ -53,6 +53,24 @@ const generateNoteDOM = note => {
   return noteElement;
 };
 
+const initializeEditPage = noteId => {
+  const noteTitleInput = document.querySelector("#note-title");
+  const lastEditedSpan = document.querySelector("#last-edited");
+  const noteBodyInput = document.querySelector("#note-body");
+
+  const notes = getNotes();
+  const note = notes.find(note => note.id === noteId);
+
+  if (!note) {
+    console.log("REDIRECT");
+    location.assign("/");
+  }
+
+  noteTitleInput.value = note.title;
+  noteBodyInput.value = note.body;
+  lastEditedSpan.textContent = generateLastEdited(note.updatedAt);
+};
+
 // generate the last edited message
 const generateLastEdited = timestamp => {
   let updatedAt = new Date(timestamp);
@@ -62,4 +80,4 @@ const generateLastEdited = timestamp => {
   return `Last Edited: ${updatedAtDate} às ${updatedAtTime}`;
 };
 
-export { renderNotes, generateNoteDOM, generateLastEdited };
+export { renderNotes, generateNoteDOM, generateLastEdited, initializeEditPage };

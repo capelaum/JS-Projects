@@ -162,6 +162,10 @@ header {
   resize: vertical;
 }
 
+#last-edited {
+  color: #fff;
+}
+
 /* Note List Item */
 
 .list-item {

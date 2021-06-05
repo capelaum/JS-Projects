@@ -86,6 +86,8 @@ const updateNote = (id, updates) => {
   }
 
   saveNotes();
+
+  return noteToUpdate;
 };
 
 export { getNotes, createNote, removeNote, sortNotes, updateNote };
