@@ -13,6 +13,7 @@
       <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Hash_Game" target="_blank">Hash Game</a></li>
       <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Loancalculator" target="_blank">Loan Calculator</a></li>
       <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Memory_Game" target="_blank">Memory Game</a></li>
+      <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Micropost" target="_blank">Micropost</a></li>
       <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Mine_Sweeper" target="_blank">Mine Sweeper</a></li>
       <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Notes_app" target="_blank">Notes app</a></li>
       <li><a href="https://github.com/capelaum/JS-Projects/tree/master/Numberguesser" target="_blank">Number Guesser</a></li>
