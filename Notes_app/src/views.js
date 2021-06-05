@@ -1,10 +1,11 @@
-"use strict";
+import { getFilters } from "./filters";
+import { sortNotes } from "./notes";
 
-// Save todos to local storage
+const renderNotes = () => {
+  const notesList = document.querySelector("#notes");
+  const filters = getFilters();
 
-// Render app notes
-const renderNotes = (notes, filters) => {
-  notes = sortNotes(notes, filters.sortBy);
+  const notes = sortNotes(filters.sortBy);
 
   const filteredNotes = notes.filter(note =>
     note.title.toLowerCase().includes(filters.searchText.toLowerCase())
@@ -26,7 +27,6 @@ const renderNotes = (notes, filters) => {
   }
 };
 
-// Generate the DOM Structure for a note
 const generateNoteDOM = note => {
   const noteElement = document.createElement("a");
   const noteText = document.createElement("p");
@@ -61,3 +61,5 @@ const generateLastEdited = timestamp => {
 
   return `Last Edited: ${updatedAtDate} às ${updatedAtTime}`;
 };
+
+export { renderNotes, generateNoteDOM, generateLastEdited };

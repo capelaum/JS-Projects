@@ -7,7 +7,6 @@ const filters = {
   sortBy: "byEdited",
 };
 
-const notesList = document.querySelector("#notes");
 const createNoteButton = document.querySelector("#create-note");
 const filterInput = document.querySelector("#search-text");
 const selectFilter = document.getElementById("filter-by");

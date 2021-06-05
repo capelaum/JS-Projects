@@ -1,21 +1,41 @@
-import { getNotes, createNote, removeNote, updateNote } from "./notes";
-import { getFilters, setFilters } from "./filters";
+import { createNote } from "./notes";
+import { setFilters } from "./filters";
+import { renderNotes } from "./views";
 
-// console.log(getNotes());
-// createNote();
+const createNoteButton = document.querySelector("#create-note");
+const filterInput = document.querySelector("#search-text");
+const selectFilter = document.getElementById("filter-by");
 
-// removeNote("bb69c0ef-f7fb-41aa-bd30-3c7bc13bfc11");
+// Load all event listeners
+loadEventListeners();
 
-// updateNote("93942258-b254-4e3b-8872-583309a4ddd9", {
-//   title: "My note title",
-//   body: "My body",
-// });
+// Load all event listeners
+function loadEventListeners() {
+  document.addEventListener("DOMContentLoaded", renderNotes());
 
-// console.log(getNotes());
+  createNoteButton.addEventListener("click", e => {
+    const noteId = createNote();
+    location.assign(`./edit.html#${noteId}`);
+  });
 
-console.log(getFilters());
-setFilters({
-  searchText: "office 2",
-  sortBy: "byCreated",
+  filterInput.addEventListener("input", e => {
+    setFilters({
+      searchText: e.target.value,
+    });
+    renderNotes();
+  });
+
+  selectFilter.addEventListener("change", e => {
+    setFilters({
+      sortBy: e.target.value,
+    });
+    renderNotes();
+  });
+}
+
+window.addEventListener("storage", e => {
+  console.log("storage changed!");
+  if (e.key === "notes") {
+    renderNotes();
+  }
 });
-console.log(getFilters());

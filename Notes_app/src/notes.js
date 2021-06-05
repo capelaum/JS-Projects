@@ -32,6 +32,8 @@ const createNote = () => {
   });
 
   saveNotes();
+
+  return noteId;
 };
 
 const removeNote = id => {
