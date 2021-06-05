@@ -21,23 +21,7 @@ function loadEventListeners() {
   document.addEventListener("DOMContentLoaded", renderNotes(notes, filters));
 
   // Create Note and store in localStorage
-  createNoteButton.addEventListener("click", (e) => {
-    const noteId = uuidv4();
-    const timestamp = new Date().getTime();
-
-    console.log(
-      "🚀 ~ file: notes-app.js ~ line 23 ~ createNoteButton.addEventListener ~ timestamp",
-      timestamp
-    );
-    
-    notes.push({
-      id: `${noteId}`,
-      title: `note-${notes.length}`,
-      body: "This is my body",
-      createdAt: timestamp,
-      updatedAt: timestamp,
-    });
-
+  createNoteButton.addEventListener("click", e => {
     localStorage.setItem("notes", JSON.stringify(notes));
     location.assign(`./edit.html#${noteId}`);
 
@@ -46,18 +30,18 @@ function loadEventListeners() {
   });
 
   // Filter tasks event
-  filterInput.addEventListener("input", (e) => {
+  filterInput.addEventListener("input", e => {
     filters.searchText = e.target.value;
     renderNotes(notes, filters);
   });
 
-  selectFilter.addEventListener("change", (e) => {
+  selectFilter.addEventListener("change", e => {
     filters.sortBy = e.target.value;
     renderNotes(notes, filters);
   });
 }
 
-window.addEventListener("storage", (e) => {
+window.addEventListener("storage", e => {
   console.log("window changed!");
   if (e.key === "notes") {
     notes = JSON.parse(e.newValue);

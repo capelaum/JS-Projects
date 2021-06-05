@@ -1,25 +1,12 @@
 "use strict";
 
-// Read existing notes from local storage
-const getSavedNotes = () => {
-  const notesJSON = localStorage.getItem("notes");
-
-  try {
-    return notesJSON ? JSON.parse(notesJSON) : [];
-  } catch (error) {
-    return [];
-  }
-};
-
 // Save todos to local storage
-const saveNotes = (notes) =>
-  localStorage.setItem("notes", JSON.stringify(notes));
 
 // Render app notes
 const renderNotes = (notes, filters) => {
   notes = sortNotes(notes, filters.sortBy);
 
-  const filteredNotes = notes.filter((note) =>
+  const filteredNotes = notes.filter(note =>
     note.title.toLowerCase().includes(filters.searchText.toLowerCase())
   );
 
@@ -27,14 +14,14 @@ const renderNotes = (notes, filters) => {
 
   if (filteredNotes.length > 0) {
     // insert filtered notes in the html document
-    filteredNotes.forEach((note) => {
+    filteredNotes.forEach(note => {
       const noteElement = generateNoteDOM(note);
       notesList.appendChild(noteElement);
     });
   } else {
     const emptyMessage = document.createElement("p");
-    emptyMessage.textContent = 'No notes to show 😑';
-    emptyMessage.classList.add('empty-message')
+    emptyMessage.textContent = "No notes to show 😑";
+    emptyMessage.classList.add("empty-message");
     notesList.appendChild(emptyMessage);
   }
 };
@@ -67,7 +54,7 @@ const sortNotes = (notes, sortBy) => {
 };
 
 // Generate the DOM Structure for a note
-const generateNoteDOM = (note) => {
+const generateNoteDOM = note => {
   const noteElement = document.createElement("a");
   const noteText = document.createElement("p");
   const statusElement = document.createElement("p");
@@ -82,9 +69,9 @@ const generateNoteDOM = (note) => {
   noteElement.appendChild(noteText);
 
   // Setup Note link
-  noteElement.setAttribute('href', `./edit.html#${note.id}`);
+  noteElement.setAttribute("href", `./edit.html#${note.id}`);
   noteElement.classList.add("list-item");
-  
+
   // Setup the status message
   statusElement.textContent = generateLastEdited(note.updatedAt);
   statusElement.classList.add("list-item__subtitle");
@@ -93,9 +80,9 @@ const generateNoteDOM = (note) => {
   return noteElement;
 };
 
-const removeNote = (id) => {
+const removeNote = id => {
   if (confirm("Are You sure?")) {
-    const noteIndex = notes.findIndex((note) => note.id === id);
+    const noteIndex = notes.findIndex(note => note.id === id);
     if (noteIndex !== -1) notes.splice(noteIndex, 1);
   }
 
@@ -103,7 +90,7 @@ const removeNote = (id) => {
 };
 
 // generate the last edited message
-const generateLastEdited = (timestamp) => {
+const generateLastEdited = timestamp => {
   let updatedAt = new Date(timestamp);
   let updatedAtDate = updatedAt.toLocaleDateString("pt-br"); // 15 de janeiro de 2021
   let updatedAtTime = `${updatedAt.getHours()}:${updatedAt.getMinutes()}:${updatedAt.getSeconds()}`;
