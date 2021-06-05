@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("utils"),console.log("My index"),console.log(6),console.log((33,Math.pow(33,2)))})();
