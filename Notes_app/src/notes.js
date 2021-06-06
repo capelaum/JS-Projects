@@ -21,7 +21,6 @@ const getNotes = () => notes;
 const createNote = () => {
   const noteId = uuidv4();
   const timestamp = new Date().getTime();
-  console.log("🚀 ~ timestamp", timestamp);
 
   notes.push({
     id: `${noteId}`,

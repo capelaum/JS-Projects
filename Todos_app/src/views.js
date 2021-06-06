@@ -1,23 +1,12 @@
-"use strict";
+import { getTodos, removeTodo, toggleTodo } from "./todos";
+import { getFilters } from "./filters";
 
-// Fetch existing todos from local storage
-const getSavedTodos = () => {
-  const todosJSON = localStorage.getItem("todos");
-
-  try {
-    return todosJSON ? JSON.parse(todosJSON) : [];
-  } catch (error) {
-    return [];
-  }
-};
-
-// Save todos to local storage
-const saveTodos = todos => localStorage.setItem("todos", JSON.stringify(todos));
+const todosListElement = document.getElementById("todos");
 
 // Render application todos
-const renderTodos = todos => {
-  const filteredTodos = todos.filter(filterTodo);
-  const incompleteTodos = todos.filter(todo => !todo.completed);
+const renderTodos = () => {
+  const filteredTodos = getTodos().filter(filterTodo);
+  const incompleteTodos = getTodos().filter(todo => !todo.completed);
 
   todosListElement.innerHTML = ""; // reset
 
@@ -34,7 +23,8 @@ const renderTodos = todos => {
 };
 
 // Filter todos with filters properties
-const filterTodo = todo => {
+function filterTodo(todo) {
+  const filters = getFilters();
   const searchTextMatch = todo.text
     .toLowerCase()
     .includes(filters.searchText.toLowerCase());
@@ -42,7 +32,7 @@ const filterTodo = todo => {
   // Only if both false -> true
   const hideCompletedMatch = !filters.hideCompleted || !todo.completed;
   return searchTextMatch && hideCompletedMatch;
-};
+}
 
 // Get the DOM elements for list summary
 const generateSummaryDOM = incompleteTodos => {
@@ -69,8 +59,7 @@ const generateTodoDOM = todo => {
   checkbox.checked = todo.completed;
   checkbox.addEventListener("change", () => {
     toggleTodo(todo.id);
-    saveTodos(todos);
-    renderTodos(todos, filters);
+    renderTodos();
   });
 
   // Setup todo text
@@ -84,8 +73,7 @@ const generateTodoDOM = todo => {
   removeButton.classList.add("button", "button-text");
   removeButton.addEventListener("click", () => {
     removeTodo(todo.id);
-    saveTodos(todos);
-    renderTodos(todos, filters);
+    renderTodos();
   });
 
   containerELement.appendChild(checkbox);
@@ -96,17 +84,4 @@ const generateTodoDOM = todo => {
   todosListElement.appendChild(todoElement);
 };
 
-// Toggle the completed value for a given todo
-const toggleTodo = id => {
-  const todo = todos.find(todo => todo.id === id);
-  if (todo) todo.completed = !todo.completed;
-};
-
-// Remove Todo by ID
-const removeTodo = id => {
-  if (confirm("Are You sure?")) {
-    const todoIndex = todos.findIndex(todo => todo.id === id);
-    if (todoIndex !== -1) todos.splice(todoIndex, 1);
-  }
-  console.log(todos);
-};
+export { renderTodos };

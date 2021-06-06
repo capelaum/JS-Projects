@@ -62,7 +62,6 @@ const initializeEditPage = noteId => {
   const note = notes.find(note => note.id === noteId);
 
   if (!note) {
-    console.log("REDIRECT");
     location.assign("/");
   }
 

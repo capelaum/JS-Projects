@@ -34,7 +34,6 @@ function loadEventListeners() {
 }
 
 window.addEventListener("storage", e => {
-  console.log("storage changed!");
   if (e.key === "notes") {
     renderNotes();
   }
