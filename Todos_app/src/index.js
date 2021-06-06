@@ -1,11 +1,12 @@
 import { setFilters } from "./filters.js";
-import { createTodo } from "./todos.js";
+import { createTodo, loadTodos } from "./todos.js";
 import { renderTodos } from "./views.js";
 
 const filterInput = document.querySelector("#filter-todos");
 const hideCompletedCheckbox = document.querySelector("#id-hideCompleted");
 const form = document.querySelector("#form");
 
+loadTodos();
 renderTodos(); // first render
 
 // Listen for filter Input value and filter
@@ -40,3 +41,10 @@ const hideCompleted = () => {
 // listen to checkbox event, atualize filters
 document.addEventListener("DOMContentLoaded", hideCompleted);
 hideCompletedCheckbox.addEventListener("change", hideCompleted);
+
+window.addEventListener("storage", e => {
+  if (e.key === "todos") {
+    loadTodos();
+    renderTodos();
+  }
+});
