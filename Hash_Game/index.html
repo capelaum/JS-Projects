@@ -1,31 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<html>
-	<head>
-        <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="style.css">
-        <title>Hash Game</title>
-	</head>
-	<body>
+<html lang="pt">
 
-		<section class="topo"> 
-			<div class="center">
-			
-				<div class="title">
-					<h2>Hash Game!</h2>
-				</div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Jogo da velha</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
 
-				<span class="clear"></span>
-			</div><!--center-->
-		</section><!--topo-->
+<body>
+    <div class="header">
+        <h1>Jogo da velha</h1>
+    </div>
 
-		<div id="current"></div>
-		<table></table>
-		<button onclick="Game.start()" >Restart</button>
+    <div class="area">
+        <div data-item="a1" class="item b r"></div>
+        <div data-item="a2" class="item b r"></div>
+        <div data-item="a3" class="item b"></div>
 
-		
+        <div data-item="b1" class="item b r"></div>
+        <div data-item="b2" class="item b r"></div>
+        <div data-item="b3" class="item b"></div>
 
-		<script src="./scripts.js" ></script>
-	</body>
+        <div data-item="c1" class="item r"></div>
+        <div data-item="c2" class="item r"></div>
+        <div data-item="c3" class="item"></div>
+    </div>
+
+    <div class="info">
+        <div class="infoitem">
+            <div class="infotitulo">Vez:</div>
+            <div class="infocorpo vez">--</div>
+        </div>
+        <div class="infoitem">
+            <div class="infotitulo">Vencedor:</div>
+            <div class="infocorpo resultado">--</div>
+        </div>
+    </div>
+
+    <button class="reset">Resetar</button>
+
+    <script src="script.js"></script>
+</body>
+
 </html>

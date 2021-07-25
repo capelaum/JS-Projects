@@ -1,114 +1,118 @@
-var divElement = document.querySelector('div'),
-	tableElement = document.querySelector('table');
+// Initial Data
+let game = {
+  a1: "",
+  a2: "",
+  a3: "",
+  b1: "",
+  b2: "",
+  b3: "",
+  c1: "",
+  c2: "",
+  c3: "",
+};
 
-// * Object Game: start() / nextPlayer() / setField(line, column) / isGameOver() / render()
-var Game = {
+let player = "";
+let warning = "";
+let playing = false;
 
-	start(){
-		this.field = [
-			['','',''],
-			['','',''],
-			['','','']
-		];
-		this.currentPlayer = 'X';
-		this.isFinished = false;
-		this.round = 0;
-		this.render();
-	},
+reset();
 
-	// Inverte jogador
-	nextPlayer(){
-		this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
-	},
-	
-	setField(line, column){
-		if(!this.isFinished && this.field[line][column] === ''){
-			this.field[line][column] = this.currentPlayer;
-			this.nextPlayer();
-			this.round++;
-			this.render();
-		}
-	},
+// Events
+document.querySelector(".reset").addEventListener("click", reset);
+document.querySelectorAll(".item").forEach(item => {
+  item.addEventListener("click", itemClick);
+});
 
-	isGameOver(){
+// Functions
+function itemClick(event) {
+  let item = event.target;
+  let itemIndex = item.getAttribute("data-item");
 
-		var field = this.field,
-			rows = 3,
-			cols = 3,
-			totalRow = 0,
-			totalCol = 0;
-
-		for(var i = 0; i < rows; i++){
-
-			totalRow = 0;
-			totalCol = 0;
-
-			for(var j = 0; j < cols; j++){
-				if(field[i][j] === 'X'){
-					totalRow++;
-				}
-				if(field[i][j] === 'O'){
-					totalRow--;
-				}
-				if(field[j][i] === 'X'){
-					totalCol++;
-				}
-				if(field[j][i] === 'O'){
-					totalCol--;
-				}
-			}// end for(col)
-
-			// Caso X ganhou
-			if(totalRow === 3 || totalCol === 3){
-				return 'X';
-			}
-
-			// Caso O ganhou
-			if(totalRow === -3 || totalCol === -3){
-				return 'O';
-			}
-
-		}// end for(line)
-
-		// Verificação das diagonais
-		if(field[0][0] !== '' && field[0][0] === field[1][1] && field[1][1] === field[2][2]){
-			return field[0][0];
-		}
-
-		if(field[0][2] !== '' && field[0][2] === field[1][1] && field[1][1] === field[2][0]){
-			return field[0][2];
-		}
-
-		// Caso empate => 9 rodadas
-		if(this.round === rows * cols){
-			return 'Nobody';
-		}
-
-	},
-
-	render(){
-
-		var winner = this.isGameOver();
-
-		document.querySelector("#current").textContent = winner ? `Winner: ${winner}` : `Current Player: ${this.currentPlayer}`;
-		
-		if(winner){
-			this.isFinished = true;
-		}
-
-		var template = '';
-		this.field.forEach( (line, lineIndex) => {
-
-			template += '<tr>';
-
-			line.forEach( (column, columnIndex) => {
-				template += `<td onclick="Game.setField(${lineIndex}, ${columnIndex})" >${column}</td>`;
-			})
-			
-			template += '</tr>'
-		})
-		tableElement.innerHTML = template;
-	}
+  if (playing && game[itemIndex] === "") {
+    game[itemIndex] = player;
+    renderGame();
+    togglePlayer();
+  }
 }
 
-Game.start();
+function reset() {
+  let warning = "";
+  playing = true;
+
+  let random = Math.floor(Math.random() * 2);
+  player = random === 0 ? "X" : "O";
+
+  for (let index in game) {
+    game[index] = "";
+  }
+
+  renderGame();
+  renderInfo();
+}
+
+function renderGame() {
+  for (let index in game) {
+    let item = document.querySelector(`div[data-item=${index}]`);
+    item.innerHTML = game[index];
+  }
+
+  checkGame();
+}
+
+function renderInfo() {
+  document.querySelector(".vez").innerHTML = player;
+  document.querySelector(".resultado").innerHTML = warning;
+}
+
+function togglePlayer() {
+  player = player === "X" ? "O" : "X";
+  renderInfo();
+}
+
+function checkGame() {
+  if (checkWinnerFor("X")) {
+    warning = '"X" venceu 🎉';
+    playing = false;
+  }
+
+  if (checkWinnerFor("O")) {
+    warning = '"O" venceu 🎉';
+    playing = false;
+  }
+
+  if (isFull()) {
+    warning = "Empatou 😅";
+    playing = false;
+  }
+}
+
+function checkWinnerFor(player) {
+  let possibilities = [
+    "a1,a2,a3",
+    "b1,b2,b3",
+    "c1,c2,c3",
+
+    "a1,b1,c1",
+    "a2,b2,c2",
+    "a3,b3,c3",
+
+    "a1,b2,c3",
+    "a3,b2,c1",
+  ];
+
+  for (let index in possibilities) {
+    let possibilityArray = possibilities[index].split(",");
+    let checkWinner = possibilityArray.every(option => game[option] === player);
+    if (checkWinner) return true;
+  }
+
+  return false;
+}
+
+function isFull() {
+  for (let index in game) {
+    if (game[index] === "") return false;
+  }
+
+  return true;
+}
